@@ -10,12 +10,19 @@ int main(void)
 
 	for (i = 0; i < 100; i++)
 	{
-		for (j = i; j < 100; j++)
+		int e = i + j;
+
+		for (j = 0; j < 100; j++)
 		{
 			int a = i / 10;
 			int b = i % 10;
 			int c = j / 10;
 			int d = j % 10;
+
+			if (e < (i + j) || (a + b) == (c + d))
+				continue;
+			else if ((a + b) > (c + d))
+				continue;
 
 			putchar('0' + a);
 			putchar('0' + b);
