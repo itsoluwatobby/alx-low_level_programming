@@ -10,7 +10,7 @@ int main(void)
 
 	for (i = 0; i < 100; i++)
 	{
-		int e = i + j;
+		/*int e = i + j;*/
 
 		for (j = 0; j < 100; j++)
 		{
@@ -19,7 +19,7 @@ int main(void)
 			int c = j / 10;
 			int d = j % 10;
 
-			if (e < (i + j) || (a + b) == (c + d))
+			if ((a + b) == (c + d) && ((a + b) + (c + d) != 2))
 				continue;
 			else if ((a + b) > (c + d))
 				continue;
