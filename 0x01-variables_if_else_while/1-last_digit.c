@@ -18,7 +18,7 @@ int main(void)
 
 if (m > 5)
 {
-	printf("%s %d is %d and is greater than 5 and not 0\n", mem, n, m);
+	printf("%s %d is %d and is greater than 5\n", mem, n, m);
 }
 else if (m == 0)
 {

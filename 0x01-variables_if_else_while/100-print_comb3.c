@@ -9,18 +9,10 @@ int main(void)
 
         for (i = 0; i < 10; i++)
         {
-		putchar(i + '0');
-                if (i < i+1)
-                {
-                        putchar('0');
-                        putchar(i + '0');
-                }
-                else
-                {
-
-                }
-                putchar(',');
-                putchar(' ');
+		
+		for (j = 1; j < 10; i++)
+		{
+			put	
         }
         return (0);
 }
