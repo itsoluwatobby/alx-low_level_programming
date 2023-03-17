@@ -21,6 +21,8 @@ int main(void)
 
 			if ((a + b) == (c + d) && ((a + b) + (c + d) != 2))
 				continue;
+			else if (a == c && b == d)
+				continue;
 			else if ((a + b) > (c + d))
 				continue;
 
