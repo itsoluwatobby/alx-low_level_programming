@@ -3,43 +3,29 @@
  * main - program that prints possible combinations of two two-digit numbers
  * Return: 0 (success)
 */
+
 int main(void)
 {
-	int i;
-	int j;
+	int num1;
+	int num2;
 
-	for (i = 0; i < 100; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		/*int e = i + j;*/
-
-		for (j = 0; j < 100; j++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			int a = i / 10;
-			int b = i % 10;
-			int c = j / 10;
-			int d = j % 10;
-
-			if ((a + b) == (c + d) && ((a + b) + (c + d) != 2))
-				continue;
-			else if (a == c && b == d)
-				continue;
-			else if ((a + b) > (c + d))
-				continue;
-
-			putchar('0' + a);
-			putchar('0' + b);
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
 			putchar(' ');
-			putchar('0' + c);
-			putchar('0' + d);
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-			/*if (i != 99 || j != 99)*/
-			if (a + b + c + d != 35)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			if (num1 == 98 && num2 == 99)
+				continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
+
 	return (0);
 }
