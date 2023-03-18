@@ -31,13 +31,15 @@ int main(void)
 			putchar(' ');
 			putchar('0' + c);
 			putchar('0' + d);
-			putchar(',');
 
-			if (i != 99 || j != 99)
+			/*if (i != 99 || j != 99)*/
+			if (a + b + c + d != 35)
 			{
+				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
+	putchar('\n');
 	return (0);
 }
