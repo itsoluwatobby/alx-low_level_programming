@@ -5,22 +5,21 @@
  */
 int main(void)
 {
-	int k = 0;
-	int x = 1;
-	int n = 1;
-	unsigned long sum;
+	unsigned int fib1 = 0;
+	unsigned int fib2 = 1;
+	int n;
+	unsigned int sum;
 
-	while (n <= 50)
+	for (n = 0; n <= 50; n++)
 	{
-		sum = k + x;
-		printf("%lu", sum);
+		sum = (fib1 + fib2);
+		printf("%u", sum);
 
-		k = x;
-		x = sum;
+		fib1 = fib2;
+		fib2 = sum;
 
 		if (n <= 50)
 			printf(", ");
-		n++;
 	}
 	return (0);
 }
