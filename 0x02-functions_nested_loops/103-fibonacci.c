@@ -8,6 +8,7 @@ int main(void)
 	unsigned int fib1 = 0;
 	unsigned int fib2 = 1;
 	unsigned int sum;
+	unsigned int total_sum;
 
 	while (1)
 	{
@@ -16,14 +17,12 @@ int main(void)
 			break;
 
 		if ((sum % 2) == 0)
-			printf("%u", sum);
-
-		if ((sum % 2 == 0) && sum < 4000000)
-			printf(", ");
+			total_sum += sum;
 
 		fib1 = fib2;
 		fib2 = sum;
 	}
+	printf("%u\n", total_sum);
 
 	return (0);
 }

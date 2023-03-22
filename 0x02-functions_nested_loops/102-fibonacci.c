@@ -5,15 +5,15 @@
  */
 int main(void)
 {
-	unsigned int fib1 = 0;
-	unsigned int fib2 = 1;
+	unsigned long fib1 = 0;
+	unsigned long fib2 = 1;
 	int n;
-	unsigned int sum;
+	unsigned long sum;
 
 	for (n = 0; n <= 50; n++)
 	{
 		sum = (fib1 + fib2);
-		printf("%u", sum);
+		printf("%lu", sum);
 
 		fib1 = fib2;
 		fib2 = sum;
