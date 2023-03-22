@@ -12,3 +12,4 @@ int print_last_digit(int n)
 		x = -x;
 	_putchar(x + '0');
 	return (x);
+}
