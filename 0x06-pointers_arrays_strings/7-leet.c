@@ -7,9 +7,18 @@
 
 char *leet(char *str)
 {
-	int i;
+	int i, j;
+	char leet1[] = "aAeEoOtTlL";
+	char leet2[] = "4433007711";
 
-	while (str)
+	for (i = 0; str[i] != '\0'; i++)
 	{
+		for (j = 0; j < 10; j++)
+		{
+			if (str[i] == leet1[j])
+				str[i] = leet2[j];
+		}
+	}
+
 	return (str);
 }
