@@ -8,8 +8,11 @@
  * Return: on success(0), else(1)
  */
 
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
+	if (argc < 2)
+		printf("Error\n");
+
 	int result = (atoi(argv[1])) * (atoi(argv[2]));
 
 	printf("%d\n", result);
