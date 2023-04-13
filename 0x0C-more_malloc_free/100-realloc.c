@@ -25,12 +25,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	if (ptr == NULL)
+	if (!ptr)
 		return (malloc(new_size));
 
 	new_mem = malloc(new_size);
 
-	if (new_mem == NULL)
+	if (!new_mem)
 		return (NULL);
 
 	copy = ptr;
