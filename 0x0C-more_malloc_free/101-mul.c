@@ -30,6 +30,7 @@ int get_length(char *s)
  * @size:size of the array.
  * Return: A pointer to the array.
  */
+
 char *parse_to_array(int size)
 {
 	char *arr;
@@ -189,12 +190,13 @@ void add_nums(char *f_prod, char *n_prod, int new_len)
  *		function exits with a status of 98.
  * Return: on success (0).
  */
+
 int main(int argc, char *argv[])
 {
 	char *f_prod, *n_prod;
 	int size, i, digit, zero = 0;
 
-	if (argc != 3)
+	if (argc < 3 || argc > 3)
 	{
 		printf("Error\n");
 		exit(98);
@@ -223,9 +225,9 @@ int main(int argc, char *argv[])
 	for (i = 0; f_prod[i]; i++)
 	{
 		if (f_prod[i] != 'x')
-			putchar(f_prod[i]);
+			_putchar(f_prod[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 
 	free(n_prod);
 	free(f_prod);

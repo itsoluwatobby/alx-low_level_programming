@@ -26,12 +26,20 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size > old_size)
 	{
 		new_mem = malloc(sizeof(int) * new_size);
+
+		if (new_mem == NULL)
+			return (NULL);
+
 		return (new_mem);
 	}
 
 	if (ptr == NULL)
 	{
 		new_mem = malloc(new_size);
+
+		if (new_mem == NULL)
+			return (NULL);
+
 		return (new_mem);
 	}
 
