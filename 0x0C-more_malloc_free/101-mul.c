@@ -5,7 +5,6 @@
 int get_length(char *s);
 char *parse_to_array(int size);
 char *iterate_zeroes(char *s);
-int get_num(char c);
 void get_result(char *prod, char *m, int num, int zero);
 void add_nums(char *f_prod, char *n_prod, int new_len);
 
