@@ -13,8 +13,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new_value;
-	unsigned int len = n;
-	unsigned int index;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0, index;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -23,33 +22,33 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	for (index = 0; s1[index]; index++)
-		len++;
+		len1++;
 
-	new_value = malloc(sizeof(char) * (len + 1));
+	for (index = 0; s2[index]; index++)
+		len2++;
+
+	if (n < len2)
+		new_value = malloc(sizeof(char) * (len1 + n + 1));
+
+	else
+		new_value = malloc(sizeof(char) * (len2 + n + 1));
 
 	if (new_value == NULL)
 		return (NULL);
 
-	len = 0;
-
-	if (n >= strlen(s2))
+	while (i < len1)
 	{
-		for (index = 0; s1[index]; index++)
-			new_value[len++] = s1[index];
-
-		for (index = 0; s2[index]; index++)
-			new_value[len++] = s2[index];
-	}
-	else
-	{
-		for (index = 0; s1[index]; index++)
-			new_value[len++] = s1[index];
-
-		for (index = 0; index < n; index++)
-			new_value[len++] = s2[index];
+		new_value[i] = s1[i];
+		i++;
 	}
 
-	new_value[len + 1] = '\0';
+	while (n < len2 && i < (len1 + n))
+		new_value[i++] = s2[j++];
+
+	while (n >= len2 && i < (len1 + len2))
+		new_value[i++] = s2[j++];
+
+	new_value[i] = '\0';
 
 	return (new_value);
 }
