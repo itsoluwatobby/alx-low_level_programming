@@ -1,9 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
 
-char *_strcpy(char *dest, char *str);
-int _strlen(char *targ);
-
 /**
  * _strcpy - function that copies a string
  * @str: given string
@@ -30,9 +27,9 @@ char *_strcpy(char *dest, char *str)
 
 int _strlen(char *targ)
 {
-	unsigned int i, len;
+	int len = 0;
 
-	for (i = 0; targ[i]; i++)
+	while (*str++)
 		len++;
 
 	return (len);
@@ -76,8 +73,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	_strcpy(dogs->name, name);
-	dogs->age = age;
 	_strcpy(dogs->owner, owner);
+	dogs->age = age;
 
 	return (dogs);
 }
