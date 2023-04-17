@@ -1,22 +1,22 @@
 #include "dog.h"
 #include <stdlib.h>
 
-char *_strcpy(char *dest, char *src);
+char *_strcpy(char *dest, char *str);
 int _strlen(char *targ);
 
 /**
  * _strcpy - function that copies a string
  * @str: given string
  * @dest: copy of the given string
- * Return dest
+ * Return: dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *str)
 {
 	unsigned int i;
 
-	for (i = 0; src[i]; i++)
-		dest[i] = src[i];
+	for (i = 0; str[i]; i++)
+		dest[i] = str[i];
 
 	dest[i] = '\0';
 	return (dest);
