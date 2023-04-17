@@ -1,13 +1,9 @@
-/**
- * File: 2-main.c
- * Author: Oluwatobi Akinola
-*/
-
 #include <stdio.h>
 
 /**
- * main - function that prints the its filename
- * Return - on success (0)
+ * main - function that prints its filename.
+ *
+ * Return: on success (0)
 */
 
 int main(void)
