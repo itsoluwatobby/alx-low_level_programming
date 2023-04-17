@@ -29,7 +29,7 @@ int _strlen(char *targ)
 {
 	int len = 0;
 
-	while (*str++)
+	while (*targ++)
 		len++;
 
 	return (len);
