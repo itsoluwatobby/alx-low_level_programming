@@ -5,9 +5,9 @@
 #include <stdio.h>
 
 /**
- * struct printer - struct type defining a printAll.
+ * struct printAll - struct type defining a printAll.
  * @symbol: symbol of a data type.
- * @printAll: function pointer that points to a function that prints
+ * @print: function pointer that points to a function that prints
  *         a data type matching to the symbol.
  */
 typedef struct printAll
