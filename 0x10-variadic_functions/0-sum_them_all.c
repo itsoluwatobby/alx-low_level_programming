@@ -6,20 +6,21 @@
  *		its parameters.
  * @n: given parameter
  * @...: paramters to calculate the sum of
- * Return: sum of all passed arguments
+ * Return: if n == 0 - 0,
+ *	Otherwise - sum of passed arguments
  */
 
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list entry;
-	unsigned int i, total_sum = 0;
+	unsigned int i, sum = 0;
 
 	va_start(entry, n);
 
 	for (i = 0; i < n; i++)
-		total_sum += va_arg(entry, int);
+		sum += va_arg(entry, int);
 
 	va_end(entry);
 
-	return (total_sum);
+	return (sum);
 }
