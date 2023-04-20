@@ -2,6 +2,7 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct printer - struct type defining a printAll.
