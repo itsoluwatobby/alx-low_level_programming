@@ -1,8 +1,10 @@
 #include "lists.h"
 #include <stdio.h>
 
+void print_before_main(void) __attribute__((constructor))
+
 /**
- * print_before_main - prints an argument
+ * print_before_main - a function that runs before the main funtion
  */
 
 void print_before_main(void)
