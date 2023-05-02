@@ -3,15 +3,17 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+int has_loops(listint_t *head);
+
 /**
- * has_a_loop - function that checks if a list has a loop
+ * has_loops - function that checks if a list has a loop
  * @head: list of listint_t
  * Return: 1 on success, else 0
  */
 
-int has_a_loop(const listint_t *head)
+int has_loops(listint_t *head)
 {
-	const listint_t *slow = head->next, *fast = head->next->next;
+	listint_t *slow = head->next, *fast = head->next->next;
 	size_t node_len = 1;
 
 	if (head == NULL || head->next == NULL)
@@ -44,36 +46,41 @@ int has_a_loop(const listint_t *head)
 }
 
 /**
- * print_listint_safe - function that prints a listint_t linked list.
- * @head: first node of listint_t
+ * free_listint_safe - function that frees a listint_t list.
+ * @h: first node of listint_t
  * Return: number of nodes
  */
 
-size_t print_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
 	size_t node_len = 0, index = 0;
+	listint_t *temp;
 
-	if (head == NULL)
-		exit(98);
+	if (*h == NULL)
+		return (0);
 
-	node_len = has_a_loop(head);
+	node_len = has_loops(*h);
 
 	if (node_len == 0)
 	{
-		for (; head != NULL; node_len++)
+		for (; *h != NULL; node_len++)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
 		}
 	}
 	else
 	{
 		for (index = 0; index < node_len; index++)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
 		}
-		printf("-> [%p] %d\n", (void *)head, head->n);
+		*h = NULL;
 	}
+
+	h = NULL;
 	return (node_len);
 }
