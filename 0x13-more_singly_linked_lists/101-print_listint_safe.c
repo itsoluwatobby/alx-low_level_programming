@@ -11,25 +11,30 @@
 
 int has_a_loop(const listint_t *head)
 {
-	const listint_t *slow = head->next, *fast = head->next->next;
+	const listint_t *slow, *fast;
 	size_t node_len = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
+	slow = head->next;
+	fast = head->next->next;
 
 	while (fast)
 	{
 		if (slow == fast)
 		{
 			slow = head;
+
 			while (slow != fast)
 			{
 				node_len++;
 				slow = slow->next;
 				fast = fast->next;
 			}
+
 			slow = slow->next;
+
 			while (slow != fast)
 			{
 				node_len++;
@@ -37,6 +42,7 @@ int has_a_loop(const listint_t *head)
 			}
 			return (node_len);
 		}
+
 		slow = slow->next;
 		fast = fast->next->next;
 	}
@@ -51,7 +57,7 @@ int has_a_loop(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t node_len = 0, index = 0;
+	size_t node_len = 0, idx = 0;
 
 	if (head == NULL)
 		exit(98);
@@ -68,12 +74,14 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	else
 	{
-		for (index = 0; index < node_len; index++)
+		for (idx = 0; idx < node_len; idx++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
+
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
+
 	return (node_len);
 }
