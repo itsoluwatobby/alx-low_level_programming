@@ -13,33 +13,17 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int n = 0;
-	listint_t *res;
 
 	if (head == NULL)
 		return (NULL);
 
-	res = malloc(sizeof(listint_t));
-	if (res == NULL)
-	{
-		printf("Error\n");
-		return (0);
-	}
-
-	if (index == 0)
-		return (head);
-
 	while (head)
 	{
 		if (n == index)
-		{
-			res->n = head->n;
-			res->next = head;
-		}
-
+			return (head);
 		head = head->next;
 		n++;
 	}
-	if (res == NULL)
-		return (NULL);
-	return (res);
+
+	return (NULL);
 }
