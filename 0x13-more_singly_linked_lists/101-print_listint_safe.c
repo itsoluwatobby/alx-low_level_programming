@@ -59,9 +59,6 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t node_len = 0, idx = 0;
 
-	if (head == NULL)
-		exit(98);
-
 	node_len = has_a_loop(head);
 
 	if (node_len == 0)
