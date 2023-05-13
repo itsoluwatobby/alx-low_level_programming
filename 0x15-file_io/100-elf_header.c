@@ -59,7 +59,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	return (0);
 }
 
-/*
+/**
  * elf_helper - function that checks if a file is an ELF file
  * @dist: pointer to an array of ELF magic numbers
  *
