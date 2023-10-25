@@ -13,32 +13,17 @@ def island_perimeter(grid):
     Args:
         grid (list): A list of lists of integers
     '''
+    grid_width = len(grid[0])
+    grid_height = len(grid)
+    edges = 0
     perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
+
+    for i in range(grid_height):
+        for j in range(grid_width):
             if grid[i][j] == 1:
-                try:
-                    if grid[i][j - 1] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i - 1][j] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i][j + 1] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i + 1][j] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-    return perimeter
+                perimeter += 1
+                if (j > 0 and grid[i][j - 1] == 1):
+                    edges += 1
+                if (i > 0 and grid[i - 1][j] == 1):
+                    edges += 1
+    return perimeter * 4 - edges * 2
