@@ -3,9 +3,9 @@
 /**
  * binary_search - A function that searches for a value in a sorted array
  *		of integers using the binary search algorithm
- * array: Sorted array to search from
- * size: size of the array
- * value: target to be found
+ * @array: Sorted array to search from
+ * @size: size of the array
+ * @value: target to be found
  *
  * Return: if SUCCESS index of the value else -1
  */
@@ -25,11 +25,11 @@ int binary_search(int *array, size_t size, int value)
 			printf("%d", array[index]);
 			if (index != end)
 				printf(", ");
-			else printf("\n");
+			else
+				printf("\n");
 		}
 		middle = start + ((end - start) / 2);
 		mid_value = array[middle];
-
 		/* check if the value is on the right side */
 		if (mid_value < value)
 			start = middle + 1;
@@ -39,6 +39,5 @@ int binary_search(int *array, size_t size, int value)
 		else
 			return (middle);
 	}
-
 	return (-1);
 }

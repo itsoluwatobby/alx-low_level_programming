@@ -1,17 +1,17 @@
 #include "search_algos.h"
 
 int advanced_binary_recur(int *array, size_t left,  size_t right, int value);
+
 /**
  * advanced_binary_recur - A recursive function for the
  *			advances_binary search algorithm
- * array: Sorted array to search from
- * left: size of the array
- * right: size of the array
- * value: target to be found
+ * @array: sorted array to search from
+ * @left: size of the array
+ * @right: size of the array
+ * @value: target to be found
  *
  * Return: if SUCCESS index of the value else -1
  */
-
 int advanced_binary_recur(int *array, size_t left,  size_t right, int value)
 {
 	size_t mid;
@@ -37,9 +37,9 @@ int advanced_binary_recur(int *array, size_t left,  size_t right, int value)
 /**
  * advanced_binary - A function that searches for a value in a sorted array
  *              of integers using the binary search algorithm
- * array: Sorted array to search from
- * size: size of the array
- * value: target to be found
+ * @array: Sorted array to search from
+ * @size: size of the array
+ * @value: target to be found
  *
  * Return: if SUCCESS index of the value else -1
 */

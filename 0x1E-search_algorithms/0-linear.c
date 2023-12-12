@@ -3,9 +3,9 @@
 /**
  * linear_search - A function that searches for a value in an array
  *		of integers using the linear search
- * array: Array of integers passed as an arg
- * size: original lenght of the array
- * value: target to be searched
+ * @array: Array of integers passed as an arg
+ * @size: original lenght of the array
+ * @value: target to be searched
  *
  * Return: first index of the target if SUCCESS
  *	else (absent/NULL) -1

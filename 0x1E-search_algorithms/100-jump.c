@@ -4,9 +4,9 @@
 /**
  * jump_search - A function that searches for a value in a sorted array
  *		of integers using the jump search algorithm
- * array: pointer to a sorted array
- * size: size of the array
- * value: target to be found
+ * @array: pointer to a sorted array
+ * @size: size of the array
+ * @value: target to be found
  *
  * Return: if SUCCESS index of the value else -1
  */

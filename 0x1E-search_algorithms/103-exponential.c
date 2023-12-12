@@ -3,12 +3,13 @@
 int binary_search_algo(int *array, int low, int high, int value);
 
 /**
- * binary_search_algo - a function that searches for a value in a sorted array of integers usin
- *			the Binary search algorithm
- * array: pointer to the given array
- * low: start index
- * high: end index
- * target: target to find
+ * binary_search_algo - a function that searches for a value in a
+ *			sorted array of integers usin the Binary
+ *			search algorithm
+ * @array: pointer to the given array
+ * @low: start index
+ * @high: end index
+ * @target: target to find
  *
  * Return: if SUCCESS firt index of value | else -1
 */
@@ -41,11 +42,11 @@ int binary_search_algo(int *array, int low, int high, int target)
 }
 
 /**
- * exponential_search - a function that searches for a value in a sorted array of integers usin
- *                      the Exponential search algorithm
- * array: pointer to the given array
- * size: size of array
- * value: target to find
+ * exponential_search - a function that searches for a value in a sorted
+ *			array of integers using the Exponential search algorithm
+ * @array: pointer to the given array
+ * @size: size of array
+ * @value: target to find
  *
  * Return: if SUCCESS first index of value | else -1
  */
@@ -61,7 +62,6 @@ int exponential_search(int *array, size_t size, int value)
 	{
 		for (bnd = 1; bnd < size && array[bnd] <= value; bnd *= 2)
 			printf("Value checked array[%ld] = [%d]\n", bnd, array[bnd]);
-			
 	}
 	low = bnd / 2;
 	high =  (bnd < size) ? bnd : size - 1;
