@@ -1,44 +1,35 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
- * binary_search - A function that searches for a value in a sorted array
- *		of integers using the binary search algorithm
- * array: Sorted array to search from
+ * jump_search - A function that searches for a value in a sorted array
+ *		of integers using the jump search algorithm
+ * array: pointer to a sorted array
  * size: size of the array
  * value: target to be found
  *
  * Return: if SUCCESS index of the value else -1
  */
 
-int binary_search(int *array, size_t size, int value)
+int jump_search(int *array, size_t size, int value)
 {
-	int mid_value = 0, index = 0, middle = 0, start = 0, end = size - 1;
+	size_t step = 0, _jump = 0, i = 0;
 
-	if (size == 0)
+	if (size == 0 || array == NULL)
 		return (-1);
-
-	while (start <= end)
+	step = sqrt(size);
+	for (i = 0; _jump < size && array[_jump] < value;)
 	{
-		printf("Searching in array: ");
-		for (index = start; index <= end; index++)
-		{
-			printf("%d", array[index]);
-			if (index != end)
-				printf(", ");
-			else printf("\n");
-		}
-		middle = start + ((end - start) / 2);
-		mid_value = array[middle];
-
-		/* check if the value is on the right side */
-		if (mid_value < value)
-			start = middle + 1;
-		/* check if the value is on the left side */
-		else if (mid_value > value)
-			end = middle - 1;
-		else
-			return (middle);
+		printf("Value checked array[%ld] = [%d]\n", _jump, array[_jump]);
+		i = _jump;
+		_jump += step;
 	}
+	printf("Value found between indexes [%ld] and [%ld]\n", i, _jump);
 
-	return (-1);
+	_jump = _jump < size - 1 ? _jump : size - 1;
+	for (; i < _jump && array[i] < value; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+	return (array[i] == value ? (int)i : -1);
 }
