@@ -23,13 +23,6 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	step = 0;
 	step_size = sqrt(size);
 
-	/*
-	 * while (list->n)
-	{
-		printf("Index[%ld] = [%d]\n", list->index, list->n);
-		list->next;
-	}*/
-
 	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
 	{
 		node = jump;
