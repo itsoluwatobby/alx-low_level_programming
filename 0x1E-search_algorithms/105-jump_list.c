@@ -17,17 +17,18 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	size_t step, step_size;
 	listint_t *node, *jump;
 
-	if (list == NULL || list->n == NULL || size == 0)
+	if (list == NULL)
 		return (NULL);
 
 	step = 0;
 	step_size = sqrt(size);
 
-	while (list->n != NULL)
+	/*
+	 * while (list->n)
 	{
-		printf("Index[%ld] = [%d]\n", list->index, list->n;
+		printf("Index[%ld] = [%d]\n", list->index, list->n);
 		list->next;
-	}
+	}*/
 
 	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
 	{
